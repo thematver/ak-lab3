@@ -1,86 +1,108 @@
 Simulation started
 {executing: Instruction(opcode=<Opcode.IN: 'in'>, operand=None)}
-{TICK: 2, PC: 1, ADDR: 0, ACC: 112, DR: 0}
+{TICK: 2, PC: 1, ADDR: 0, ACC: 107, DR: 0}
 {executing: Instruction(opcode=<Opcode.CMP: 'cmp'>, operand=Operand(type=<OperandType.DIRECT_ADDRESS: 'direct_address'>, value=0))}
-{TICK: 4, PC: 2, ADDR: 0, ACC: 112, DR: 0}
+{TICK: 4, PC: 2, ADDR: 0, ACC: 107, DR: 0}
 {executing: Instruction(opcode=<Opcode.JE: 'je'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=5))}
-{TICK: 5, PC: 3, ADDR: 0, ACC: 112, DR: 0}
+{TICK: 5, PC: 3, ADDR: 0, ACC: 107, DR: 0}
 {executing: Instruction(opcode=<Opcode.OUT: 'out'>, operand=None)}
-{new output symbol 'p' will be added to ''}
-{TICK: 7, PC: 4, ADDR: 0, ACC: 112, DR: 0}
+{new output symbol 'k' will be added to ''}
+{TICK: 7, PC: 4, ADDR: 0, ACC: 107, DR: 0}
 {executing: Instruction(opcode=<Opcode.JMP: 'jmp'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=0))}
-{TICK: 8, PC: 0, ADDR: 0, ACC: 112, DR: 0}
+{TICK: 8, PC: 0, ADDR: 0, ACC: 107, DR: 0}
 {executing: Instruction(opcode=<Opcode.IN: 'in'>, operand=None)}
-{TICK: 10, PC: 1, ADDR: 0, ACC: 101, DR: 0}
+{TICK: 10, PC: 1, ADDR: 0, ACC: 111, DR: 0}
 {executing: Instruction(opcode=<Opcode.CMP: 'cmp'>, operand=Operand(type=<OperandType.DIRECT_ADDRESS: 'direct_address'>, value=0))}
-{TICK: 12, PC: 2, ADDR: 0, ACC: 101, DR: 0}
+{TICK: 12, PC: 2, ADDR: 0, ACC: 111, DR: 0}
 {executing: Instruction(opcode=<Opcode.JE: 'je'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=5))}
-{TICK: 13, PC: 3, ADDR: 0, ACC: 101, DR: 0}
+{TICK: 13, PC: 3, ADDR: 0, ACC: 111, DR: 0}
 {executing: Instruction(opcode=<Opcode.OUT: 'out'>, operand=None)}
-{new output symbol 'e' will be added to 'p'}
-{TICK: 15, PC: 4, ADDR: 0, ACC: 101, DR: 0}
+{new output symbol 'o' will be added to 'k'}
+{TICK: 15, PC: 4, ADDR: 0, ACC: 111, DR: 0}
 {executing: Instruction(opcode=<Opcode.JMP: 'jmp'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=0))}
-{TICK: 16, PC: 0, ADDR: 0, ACC: 101, DR: 0}
+{TICK: 16, PC: 0, ADDR: 0, ACC: 111, DR: 0}
 {executing: Instruction(opcode=<Opcode.IN: 'in'>, operand=None)}
-{TICK: 18, PC: 1, ADDR: 0, ACC: 110, DR: 0}
+{TICK: 18, PC: 1, ADDR: 0, ACC: 114, DR: 0}
 {executing: Instruction(opcode=<Opcode.CMP: 'cmp'>, operand=Operand(type=<OperandType.DIRECT_ADDRESS: 'direct_address'>, value=0))}
-{TICK: 20, PC: 2, ADDR: 0, ACC: 110, DR: 0}
+{TICK: 20, PC: 2, ADDR: 0, ACC: 114, DR: 0}
 {executing: Instruction(opcode=<Opcode.JE: 'je'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=5))}
-{TICK: 21, PC: 3, ADDR: 0, ACC: 110, DR: 0}
+{TICK: 21, PC: 3, ADDR: 0, ACC: 114, DR: 0}
 {executing: Instruction(opcode=<Opcode.OUT: 'out'>, operand=None)}
-{new output symbol 'n' will be added to 'pe'}
-{TICK: 23, PC: 4, ADDR: 0, ACC: 110, DR: 0}
+{new output symbol 'r' will be added to 'ko'}
+{TICK: 23, PC: 4, ADDR: 0, ACC: 114, DR: 0}
 {executing: Instruction(opcode=<Opcode.JMP: 'jmp'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=0))}
-{TICK: 24, PC: 0, ADDR: 0, ACC: 110, DR: 0}
+{TICK: 24, PC: 0, ADDR: 0, ACC: 114, DR: 0}
 {executing: Instruction(opcode=<Opcode.IN: 'in'>, operand=None)}
-{TICK: 26, PC: 1, ADDR: 0, ACC: 115, DR: 0}
+{TICK: 26, PC: 1, ADDR: 0, ACC: 101, DR: 0}
 {executing: Instruction(opcode=<Opcode.CMP: 'cmp'>, operand=Operand(type=<OperandType.DIRECT_ADDRESS: 'direct_address'>, value=0))}
-{TICK: 28, PC: 2, ADDR: 0, ACC: 115, DR: 0}
+{TICK: 28, PC: 2, ADDR: 0, ACC: 101, DR: 0}
 {executing: Instruction(opcode=<Opcode.JE: 'je'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=5))}
-{TICK: 29, PC: 3, ADDR: 0, ACC: 115, DR: 0}
+{TICK: 29, PC: 3, ADDR: 0, ACC: 101, DR: 0}
 {executing: Instruction(opcode=<Opcode.OUT: 'out'>, operand=None)}
-{new output symbol 's' will be added to 'pen'}
-{TICK: 31, PC: 4, ADDR: 0, ACC: 115, DR: 0}
+{new output symbol 'e' will be added to 'kor'}
+{TICK: 31, PC: 4, ADDR: 0, ACC: 101, DR: 0}
 {executing: Instruction(opcode=<Opcode.JMP: 'jmp'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=0))}
-{TICK: 32, PC: 0, ADDR: 0, ACC: 115, DR: 0}
+{TICK: 32, PC: 0, ADDR: 0, ACC: 101, DR: 0}
 {executing: Instruction(opcode=<Opcode.IN: 'in'>, operand=None)}
-{TICK: 34, PC: 1, ADDR: 0, ACC: 107, DR: 0}
+{TICK: 34, PC: 1, ADDR: 0, ACC: 112, DR: 0}
 {executing: Instruction(opcode=<Opcode.CMP: 'cmp'>, operand=Operand(type=<OperandType.DIRECT_ADDRESS: 'direct_address'>, value=0))}
-{TICK: 36, PC: 2, ADDR: 0, ACC: 107, DR: 0}
+{TICK: 36, PC: 2, ADDR: 0, ACC: 112, DR: 0}
 {executing: Instruction(opcode=<Opcode.JE: 'je'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=5))}
-{TICK: 37, PC: 3, ADDR: 0, ACC: 107, DR: 0}
+{TICK: 37, PC: 3, ADDR: 0, ACC: 112, DR: 0}
 {executing: Instruction(opcode=<Opcode.OUT: 'out'>, operand=None)}
-{new output symbol 'k' will be added to 'pens'}
-{TICK: 39, PC: 4, ADDR: 0, ACC: 107, DR: 0}
+{new output symbol 'p' will be added to 'kore'}
+{TICK: 39, PC: 4, ADDR: 0, ACC: 112, DR: 0}
 {executing: Instruction(opcode=<Opcode.JMP: 'jmp'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=0))}
-{TICK: 40, PC: 0, ADDR: 0, ACC: 107, DR: 0}
+{TICK: 40, PC: 0, ADDR: 0, ACC: 112, DR: 0}
 {executing: Instruction(opcode=<Opcode.IN: 'in'>, operand=None)}
-{TICK: 42, PC: 1, ADDR: 0, ACC: 111, DR: 0}
+{TICK: 42, PC: 1, ADDR: 0, ACC: 97, DR: 0}
 {executing: Instruction(opcode=<Opcode.CMP: 'cmp'>, operand=Operand(type=<OperandType.DIRECT_ADDRESS: 'direct_address'>, value=0))}
-{TICK: 44, PC: 2, ADDR: 0, ACC: 111, DR: 0}
+{TICK: 44, PC: 2, ADDR: 0, ACC: 97, DR: 0}
 {executing: Instruction(opcode=<Opcode.JE: 'je'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=5))}
-{TICK: 45, PC: 3, ADDR: 0, ACC: 111, DR: 0}
+{TICK: 45, PC: 3, ADDR: 0, ACC: 97, DR: 0}
 {executing: Instruction(opcode=<Opcode.OUT: 'out'>, operand=None)}
-{new output symbol 'o' will be added to 'pensk'}
-{TICK: 47, PC: 4, ADDR: 0, ACC: 111, DR: 0}
+{new output symbol 'a' will be added to 'korep'}
+{TICK: 47, PC: 4, ADDR: 0, ACC: 97, DR: 0}
 {executing: Instruction(opcode=<Opcode.JMP: 'jmp'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=0))}
-{TICK: 48, PC: 0, ADDR: 0, ACC: 111, DR: 0}
+{TICK: 48, PC: 0, ADDR: 0, ACC: 97, DR: 0}
 {executing: Instruction(opcode=<Opcode.IN: 'in'>, operand=None)}
-{TICK: 50, PC: 1, ADDR: 0, ACC: 121, DR: 0}
+{TICK: 50, PC: 1, ADDR: 0, ACC: 110, DR: 0}
 {executing: Instruction(opcode=<Opcode.CMP: 'cmp'>, operand=Operand(type=<OperandType.DIRECT_ADDRESS: 'direct_address'>, value=0))}
-{TICK: 52, PC: 2, ADDR: 0, ACC: 121, DR: 0}
+{TICK: 52, PC: 2, ADDR: 0, ACC: 110, DR: 0}
 {executing: Instruction(opcode=<Opcode.JE: 'je'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=5))}
-{TICK: 53, PC: 3, ADDR: 0, ACC: 121, DR: 0}
+{TICK: 53, PC: 3, ADDR: 0, ACC: 110, DR: 0}
 {executing: Instruction(opcode=<Opcode.OUT: 'out'>, operand=None)}
-{new output symbol 'y' will be added to 'pensko'}
-{TICK: 55, PC: 4, ADDR: 0, ACC: 121, DR: 0}
+{new output symbol 'n' will be added to 'korepa'}
+{TICK: 55, PC: 4, ADDR: 0, ACC: 110, DR: 0}
 {executing: Instruction(opcode=<Opcode.JMP: 'jmp'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=0))}
-{TICK: 56, PC: 0, ADDR: 0, ACC: 121, DR: 0}
+{TICK: 56, PC: 0, ADDR: 0, ACC: 110, DR: 0}
+{executing: Instruction(opcode=<Opcode.IN: 'in'>, operand=None)}
+{TICK: 58, PC: 1, ADDR: 0, ACC: 111, DR: 0}
+{executing: Instruction(opcode=<Opcode.CMP: 'cmp'>, operand=Operand(type=<OperandType.DIRECT_ADDRESS: 'direct_address'>, value=0))}
+{TICK: 60, PC: 2, ADDR: 0, ACC: 111, DR: 0}
+{executing: Instruction(opcode=<Opcode.JE: 'je'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=5))}
+{TICK: 61, PC: 3, ADDR: 0, ACC: 111, DR: 0}
+{executing: Instruction(opcode=<Opcode.OUT: 'out'>, operand=None)}
+{new output symbol 'o' will be added to 'korepan'}
+{TICK: 63, PC: 4, ADDR: 0, ACC: 111, DR: 0}
+{executing: Instruction(opcode=<Opcode.JMP: 'jmp'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=0))}
+{TICK: 64, PC: 0, ADDR: 0, ACC: 111, DR: 0}
+{executing: Instruction(opcode=<Opcode.IN: 'in'>, operand=None)}
+{TICK: 66, PC: 1, ADDR: 0, ACC: 118, DR: 0}
+{executing: Instruction(opcode=<Opcode.CMP: 'cmp'>, operand=Operand(type=<OperandType.DIRECT_ADDRESS: 'direct_address'>, value=0))}
+{TICK: 68, PC: 2, ADDR: 0, ACC: 118, DR: 0}
+{executing: Instruction(opcode=<Opcode.JE: 'je'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=5))}
+{TICK: 69, PC: 3, ADDR: 0, ACC: 118, DR: 0}
+{executing: Instruction(opcode=<Opcode.OUT: 'out'>, operand=None)}
+{new output symbol 'v' will be added to 'korepano'}
+{TICK: 71, PC: 4, ADDR: 0, ACC: 118, DR: 0}
+{executing: Instruction(opcode=<Opcode.JMP: 'jmp'>, operand=Operand(type=<OperandType.CONSTANT: 'constant'>, value=0))}
+{TICK: 72, PC: 0, ADDR: 0, ACC: 118, DR: 0}
 {executing: Instruction(opcode=<Opcode.IN: 'in'>, operand=None)}
 Input buffer is empty!
 Simulation finished
-output: 'penskoy'
-instructions: 35
-ticks: 56
+output: 'korepanov'
+instructions: 45
+ticks: 72
 memory: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-acc: 121
+acc: 118
