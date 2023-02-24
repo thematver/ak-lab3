@@ -18,7 +18,9 @@ jobs:
       - name: Install requirements
         # Устанавливаем зависимости
         run: pip install coverage
-      - name: Run machine tests
-        run: python3 -m coverage run machine_intergration_test.py
+      - name: Run golden tests
+        run: python3 -m coverage run machine/golden_test.py
       - name: Run translator tests
-        run: python3 -m coverage run translator_integration_test.py
+        run: python3 -m coverage run machine/test_translator.py
+      - name: Run simulation tests
+        run: python3 -m coverage run machine/test_simulation.py
