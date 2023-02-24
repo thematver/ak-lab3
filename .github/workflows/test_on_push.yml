@@ -1,0 +1,24 @@
+on:
+  push:
+    tags:
+      - '!refs/tags/*'
+    branches:
+      - '*'
+jobs:
+  run_tests:
+    runs-on: [ubuntu-latest]
+    steps:
+      # Чекаутим код
+      - uses: actions/checkout@master
+      # Устанавливаем python нужной версии
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          architecture: 'x64'
+      - name: Install requirements
+        # Устанавливаем зависимости
+        run: pip install coverage
+      - name: Run machine tests
+        run: python3 -m coverage run machine_intergration_test.py
+      - name: Run translator tests
+        run: python3 -m coverage run translator_integration_test.py
