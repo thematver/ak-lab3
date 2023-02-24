@@ -138,7 +138,7 @@ section .text
 
 ## Модель процессора
 
-![Processor Scheme](doc/vm.jpg)
+![Processor Scheme](doc/vm.png)
 
 Особенности процессора:
 - Все операции построены вокруг аккумулятора `acc`, участвует в вводе-выводе
