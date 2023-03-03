@@ -34,12 +34,21 @@ class Operand:
     type: OperandType
     value: Union[int, str]
 
+    def __repr__(self):
+        return {
+            OperandType.DIRECT_ADDRESS: "",
+            OperandType.INDIRECT_ADDRESS: "$",
+            OperandType.CONSTANT: "#",
+            OperandType.LABEL_TO_REPLACE: ""
+        }[self.type] + str(self.value)
+
 
 @dataclass
 class InstructionType:
     opcode: Opcode
-    operands_count: int
-    is_data_operand: Optional[bool]
+    # true - при наличии операдна, может быть обращение по метке из секции .data
+    # false - из секции .text
+    is_data_operand: bool
 
 
 @dataclass
@@ -47,22 +56,25 @@ class Instruction:
     opcode: Opcode
     operand: Optional[Operand]
 
+    def __repr__(self):
+        return str(self.opcode).split(".")[1] + ("" if self.operand is None else f" {self.operand.__repr__()}")
+
 
 INSTRUCTION_TYPES = {
-    'in': InstructionType(Opcode.IN, 0, None),
-    'out': InstructionType(Opcode.OUT, 0, None),
-    'hlt': InstructionType(Opcode.HLT, 0, None),
+    'st': InstructionType(Opcode.ST, True),
+    'ld': InstructionType(Opcode.LD, True),
+    'add': InstructionType(Opcode.ADD, True),
+    'div': InstructionType(Opcode.DIV, True),
+    'mod': InstructionType(Opcode.MOD, True),
 
-    'st': InstructionType(Opcode.ST, 1, True),
-    'ld': InstructionType(Opcode.LD, 1, True),
-    'add': InstructionType(Opcode.ADD, 1, True),
-    'div': InstructionType(Opcode.DIV, 1, True),
-    'mod': InstructionType(Opcode.MOD, 1, True),
+    'cmp': InstructionType(Opcode.CMP, True),
 
-    'cmp': InstructionType(Opcode.CMP, 1, True),
+    'jmp': InstructionType(Opcode.JMP, False),
+    'je': InstructionType(Opcode.JE, False),
 
-    'jmp': InstructionType(Opcode.JMP, 1, False),
-    'je': InstructionType(Opcode.JE, 1, False),
+    'in': InstructionType(Opcode.IN, False),
+    'out': InstructionType(Opcode.OUT, False),
+    'hlt': InstructionType(Opcode.HLT, False),
 }
 
 
@@ -74,6 +86,7 @@ def instr_to_bin(instructions: [Instruction]) -> [bytes]:
         cmd = ((opcode << 3) + operand_type)
         code += [cmd.to_bytes(4, 'big', signed=False)]
         if operand_type > 0:
+            # константы кодируются знаковым числом, адреса - беззнаковым
             code += [instr.operand.value.to_bytes(4, 'big', signed=instr.operand.type == OperandType.CONSTANT)]
             pass
     return code

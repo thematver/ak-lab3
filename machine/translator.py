@@ -34,8 +34,6 @@ def parse_instruction(line: str) -> Instruction:
     assert len(tokens) > 0, 'no tokens in the line'
 
     instr_type = INSTRUCTION_TYPES[tokens[0]]
-    assert len(tokens) - 1 == instr_type.operands_count, 'illegal operands count'
-
     operand = None
     if len(tokens) == 2:
         operand = parse_operand(tokens[1])
