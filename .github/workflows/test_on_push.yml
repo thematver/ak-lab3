@@ -5,13 +5,49 @@ on:
 
 jobs:
   prepare:
-    uses: thematver/ca-actions/.github/workflows/full-workflow.yml@main
-    with:
-      python_version: 3.9
-      pytest_workdir: test
-      coverage_path: ../machine
-      mypy: false
-      flake8: false
-      black: false
-      isort: false
-      
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ inputs.python_version }}
+          cache: ${{ inputs.package_manager }}
+
+      - name: Install package manager
+        if: inputs.package_manager != 'pip'
+        run: pip install ${{ inputs.package_manager }}
+
+      - id: install
+        name: Install Requirements
+        run: ${{ inputs.install_command }}
+
+      - name: Run pytest
+        if: inputs.pytest && !inputs.coverage
+        working-directory: ${{ inputs.pytest_workdir }}
+        run: >
+          pytest
+          ${{ inputs.pytest_tests }}
+          -p no:cacheprovider
+          ${{ inputs.pytest_extra_params }}
+      - name: Run pytest with coverage
+        if: inputs.pytest && inputs.coverage
+        working-directory: ${{ inputs.pytest_workdir }}
+        run: >
+          pytest
+          ${{ inputs.pytest_tests }}
+          -p no:cacheprovider
+          --cov=${GITHUB_WORKSPACE}/${{ inputs.pytest_workdir }}/${{ inputs.coverage_path }}
+          --cov-fail-under=0
+          ${{ inputs.pytest_extra_params }}
+      - name: Report test coverage
+        if: inputs.coverage
+        working-directory: ${{ inputs.pytest_workdir }}
+        run: >
+          coverage
+          report
+          ${{ inputs.coverage_extra_params }}
