@@ -15,35 +15,23 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ inputs.python_version }}
-          cache: ${{ inputs.package_manager }}
+          python-version: 3.9
+          cache: pip
 
       - id: install
         name: Install Requirements
         run: pip install -r requirements.txt
 
       - name: Run pytest
-        if: inputs.pytest && !inputs.coverage
-        working-directory: ${{ inputs.pytest_workdir }}
         run: >
           pytest
-          ${{ inputs.pytest_tests }}
+          .
           -p no:cacheprovider
-          ${{ inputs.pytest_extra_params }}
+
       - name: Run pytest with coverage
-        if: inputs.pytest && inputs.coverage
-        working-directory: ${{ inputs.pytest_workdir }}
-        run: >
-          pytest
-          ${{ inputs.pytest_tests }}
-          -p no:cacheprovider
-          --cov=${GITHUB_WORKSPACE}/${{ inputs.pytest_workdir }}/${{ inputs.coverage_path }}
-          --cov-fail-under=0
-          ${{ inputs.pytest_extra_params }}
+        run: pytest . -p no:cacheprovider --cov=./machine --cov-fail-under=0
+
       - name: Report test coverage
-        if: inputs.coverage
-        working-directory: ${{ inputs.pytest_workdir }}
         run: >
           coverage
           report
-          ${{ inputs.coverage_extra_params }}
