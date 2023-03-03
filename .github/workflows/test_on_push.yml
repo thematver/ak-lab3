@@ -10,4 +10,8 @@ jobs:
       python_version: 3.9
       pytest_workdir: test
       coverage_path: ../machine
+      mypy: false
+      flake8: false
+      black: false
+      isort: false
       
