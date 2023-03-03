@@ -18,13 +18,9 @@ jobs:
           python-version: ${{ inputs.python_version }}
           cache: ${{ inputs.package_manager }}
 
-      - name: Install package manager
-        if: inputs.package_manager != 'pip'
-        run: pip install ${{ inputs.package_manager }}
-
       - id: install
         name: Install Requirements
-        run: ${{ inputs.install_command }}
+        run: pip install -r requirements.txt
 
       - name: Run pytest
         if: inputs.pytest && !inputs.coverage
