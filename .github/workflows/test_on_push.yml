@@ -5,7 +5,7 @@ on:
 
 jobs:
   prepare:
-    uses: thematver/ca-actions/.github/workflows/full-workflow.yml@f0bd75fd02fecb2cea0df555ec13697e2ebbcb68
+    uses: thematver/ca-actions/.github/workflows/full-workflow.yml@v1.0
     with:
       python_version: 3.9
       pytest_workdir: test
